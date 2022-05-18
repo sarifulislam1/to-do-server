@@ -38,7 +38,7 @@ async function run() {
 
         })
 
-        //delet api 
+        //delete api 
         app.delete('/addTask/:id', (req, res) => {
             const id = req.params.id
             const filter = { _id: ObjectId(id) }
