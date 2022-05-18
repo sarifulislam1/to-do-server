@@ -18,6 +18,15 @@ async function run() {
         await client.connect();
         const taskCollection = client.db("tasksInfo").collection("tasks");
 
+        // post api
+
+        app.post('/addTask', async (req, res) => {
+            const data = req.body
+            const result = await taskCollection.insertOne(data)
+
+            res.send(result)
+        })
+
     } finally {
 
     }
